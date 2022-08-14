@@ -34,6 +34,7 @@ class CustomerFactory extends Factory
             'email' => fake()->safeEmail(),
             'password' => fake()->numerify('123'),
             'privilege' => fake()->randomElement(['Super Admin', 'Admin', 'Regular']),
+            'status' => fake()->randomElement(['Active', 'Not Active']),
         ];
     }
     //php artisan tinker

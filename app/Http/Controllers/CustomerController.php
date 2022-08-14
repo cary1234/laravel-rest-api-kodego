@@ -60,9 +60,13 @@ class CustomerController extends Controller
     {
         //gets the primary and triggers the update command
         $customer = Customer::findOrFail($id);
+        $customer->employee_id = $request->employee_id;
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
         $customer->email = $request->email;
+        $customer->password = $request->password;
+        $customer->privilege = $request->privilege;
+        $customer->status = $request->status;
         $customer->save();
         \Log::info($customer);
         return response()->json($customer);
