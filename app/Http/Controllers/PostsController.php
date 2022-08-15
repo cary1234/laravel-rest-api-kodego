@@ -16,8 +16,17 @@ class PostsController extends Controller
         // Search in the title and body columns from the posts table
         $posts = Attendance::select('*')
             ->where('employee_id_pk', '=', "$search")
+            ->orderBy('created_at', 'desc')
             ->get();
         \Log::info($posts);
+
+
+
+
+
+
+
+
 
         // Return the search view with the resluts compacted
         return response()->json($posts);

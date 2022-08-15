@@ -15,7 +15,7 @@ class CustomerController extends Controller
     public function index()
     {
         //outputs all customerorder by ID
-        $customers = Customer::orderBy('id', 'desc')->get();
+        $customers = Customer::orderBy('first_name', 'asc')->get();
         return response()->json($customers);
     }
 
@@ -29,9 +29,13 @@ class CustomerController extends Controller
     {
         //create new data on customer table
         $customer = new Customer;
+        $customer->employee_id = $request->employee_id;
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
         $customer->email = $request->email;
+        $customer->password = $request->password;
+        $customer->privilege = $request->privilege;
+        $customer->status = $request->status;
         $customer->save();
         return response()->json($customer);
     }
