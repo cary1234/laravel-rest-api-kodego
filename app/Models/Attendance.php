@@ -14,6 +14,7 @@ class Attendance extends Model
         'real_location',
         'site_location',
         'type',
-        'remarks'
+        'remarks',
+        'created_at'
     ];
 }
