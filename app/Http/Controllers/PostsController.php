@@ -18,7 +18,7 @@ class PostsController extends Controller
             ->where('employee_id_pk', '=', "$search")
             ->orderBy('created_at', 'desc')
             ->get();
-        \Log::info($posts);
+        // \Log::info($posts);
 
 
 

@@ -72,7 +72,7 @@ class CustomerController extends Controller
         $customer->privilege = $request->privilege;
         $customer->status = $request->status;
         $customer->save();
-        \Log::info($customer);
+        // \Log::info($customer);
         return response()->json($customer);
     }
 
