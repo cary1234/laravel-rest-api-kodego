@@ -81,6 +81,7 @@ class AttendanceController extends Controller
         $attendance->site_location = $request->site_location;
         $attendance->type = $request->type;
         $attendance->remarks = $request->remarks;
+        $attendance->created_at = $request->created_at;
         $attendance->save();
         \Log::info($attendance);
         return response()->json($attendance);
