@@ -18,7 +18,7 @@ class AttendanceController extends Controller
         //outputs all customerorder by ID
         $attendances = Attendance::select('*')
             ->get();
-        \Log::info($attendance);
+        //  \Log::info($attendance);
 
 
         // $attendances = Attendance::findOrFail($id)
@@ -47,7 +47,7 @@ class AttendanceController extends Controller
         $attendance->type = $request->type;
         $attendance->remarks = $request->remarks;
         $attendance->save();
-        \Log::info($attendance);
+        // \Log::info($attendance);
         return response()->json($attendance);
     }
 
@@ -61,7 +61,7 @@ class AttendanceController extends Controller
     {
         //gets the id only for update or delete purposes
         $attendance = Attendance::findOrFail($id);
-        \Log::info($attendance);
+        // \Log::info($attendance);
         return response()->json($attendance);
     }
 
@@ -83,7 +83,7 @@ class AttendanceController extends Controller
         $attendance->remarks = $request->remarks;
         $attendance->created_at = $request->created_at;
         $attendance->save();
-        \Log::info($attendance);
+        // \Log::info($attendance);
         return response()->json($attendance);
     }
 
@@ -98,7 +98,7 @@ class AttendanceController extends Controller
         //gets the primary and triggers the delete command
         $attendance = Attendance::findOrFail($id);
         $attendance->delete();
-        \Log::info($attendance);
+        // \Log::info($attendance);
         return response()->json($attendance);
     }
 }
